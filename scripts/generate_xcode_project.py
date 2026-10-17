@@ -54,20 +54,20 @@ def generate_pbxproj(output_path):
         idx += 1
         all_file_ids.append(f'\t\t\t\t{f_id} /* {name} */')
         swift_build_ids.append(f'\t\t\t\t{b_id} /* {name} in Sources */')
-        file_refs.append(f'\t\t{f_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = SOURCE_ROOT; }};')
+        file_refs.append(f'\t\t{f_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = "<group>"; }};')
         build_files.append(f'\t\t{b_id} /* {name} in Sources */ = {{isa = PBXBuildFile; fileRef = {f_id} /* {name} */; }};')
 
     # Assets
     asset_fid = u(500)
     asset_bid = u(1500)
     all_file_ids.append(f'\t\t\t\t{asset_fid} /* Assets.xcassets */')
-    file_refs.append(f'\t\t{asset_fid} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; }};')
+    file_refs.append(f'\t\t{asset_fid} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = "<group>"; }};')
     build_files.append(f'\t\t{asset_bid} /* Assets.xcassets in Resources */ = {{isa = PBXBuildFile; fileRef = {asset_fid} /* Assets.xcassets */; }};')
 
     # Info.plist
     plist_fid = u(501)
     all_file_ids.append(f'\t\t\t\t{plist_fid} /* Info.plist */')
-    file_refs.append(f'\t\t{plist_fid} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = SOURCE_ROOT; }};')
+    file_refs.append(f'\t\t{plist_fid} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = "<group>"; }};')
 
     # Frameworks & Products
     product_fid = u(502)
@@ -126,6 +126,7 @@ def generate_pbxproj(output_path):
 {group_children},
 				{product_fid} /* JarvisApp.app */,
 			);
+			path = "..";
 			sourceTree = "<group>";
 		}};
 /* End PBXGroup section */
@@ -173,7 +174,7 @@ def generate_pbxproj(output_path):
 			);
 			mainGroup = {u(2)};
 			productRefGroup = {u(2)};
-			projectDirPath = "..";
+			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				{u(3)} /* JarvisApp */,

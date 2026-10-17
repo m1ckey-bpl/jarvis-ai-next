@@ -43,6 +43,7 @@ jobs:
       - name: Compile JarvisApp (Unsigned)
         run: |
           mkdir -p build
+          xcodebuild -list -project ios/JarvisApp.xcodeproj
           xcodebuild \
             -project ios/JarvisApp.xcodeproj \
             -scheme JarvisApp \
