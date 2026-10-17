@@ -45,37 +45,37 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1B2C3D4E5F6000000000064 /* AIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/AIProvider.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000065 /* GeminiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/GeminiProvider.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000066 /* GroqProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/GroqProvider.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000067 /* ProviderCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/ProviderCatalog.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000068 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Security/KeychainStore.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000069 /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Memory/MemoryStore.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006A /* ConversationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Memory/ConversationContext.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006B /* SpeechEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Voice/SpeechEngine.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006C /* VisemeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Voice/VisemeEngine.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006D /* AgentOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Agent/AgentOrchestrator.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006E /* ToolRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Tools/ToolRegistry.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000006F /* ReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Reminders/ReminderManager.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000070 /* JarvisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/JarvisApp.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000071 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/AppEnvironment.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000072 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/RootView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000073 /* MainShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/MainShell.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000074 /* JarvisTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisTheme.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000075 /* JarvisFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisFace.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000076 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/WaveformView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000077 /* JarvisComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisComponents.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000078 /* AssistantHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/AssistantHomeView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000079 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/OnboardingView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007A /* MemoryCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/MemoryCenterView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007B /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/TasksView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007C /* IntegrationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/IntegrationsView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/SettingsView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007E /* ProviderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/ProviderSettingsView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F600000000007F /* ConversationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/ConversationHistoryView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F6000000000080 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/DiagnosticsView.swift"; sourceTree = "<group>"; };
-		A1B2C3D4E5F60000000001F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = "<group>"; };
-		A1B2C3D4E5F60000000001F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = "<group>"; };
+		A1B2C3D4E5F6000000000064 /* AIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/AIProvider.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000065 /* GeminiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/GeminiProvider.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000066 /* GroqProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/GroqProvider.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000067 /* ProviderCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Providers/ProviderCatalog.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000068 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Security/KeychainStore.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000069 /* MemoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Memory/MemoryStore.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006A /* ConversationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Memory/ConversationContext.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006B /* SpeechEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Voice/SpeechEngine.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006C /* VisemeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Voice/VisemeEngine.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006D /* AgentOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Agent/AgentOrchestrator.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006E /* ToolRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Tools/ToolRegistry.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000006F /* ReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisCore/Sources/JarvisCore/Reminders/ReminderManager.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000070 /* JarvisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/JarvisApp.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000071 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/AppEnvironment.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000072 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/RootView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000073 /* MainShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/App/MainShell.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000074 /* JarvisTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisTheme.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000075 /* JarvisFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisFace.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000076 /* WaveformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/WaveformView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000077 /* JarvisComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Design/JarvisComponents.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000078 /* AssistantHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/AssistantHomeView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000079 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/OnboardingView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007A /* MemoryCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/MemoryCenterView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007B /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/TasksView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007C /* IntegrationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/IntegrationsView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007E /* ProviderSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/ProviderSettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F600000000007F /* ConversationHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/ConversationHistoryView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F6000000000080 /* DiagnosticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JarvisApp/Screens/DiagnosticsView.swift"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F60000000001F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F60000000001F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = SOURCE_ROOT; };
 		A1B2C3D4E5F60000000001F6 /* JarvisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JarvisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D4E5F6000000000081 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A1B2C3D4E5F6000000000082 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
@@ -134,6 +134,11 @@
 				A1B2C3D4E5F6000000000080 /* DiagnosticsView.swift */,
 				A1B2C3D4E5F60000000001F4 /* Assets.xcassets */,
 				A1B2C3D4E5F60000000001F5 /* Info.plist */,
+				A1B2C3D4E5F6000000000081 /* AVFoundation.framework */,
+				A1B2C3D4E5F6000000000082 /* Speech.framework */,
+				A1B2C3D4E5F6000000000083 /* UserNotifications.framework */,
+				A1B2C3D4E5F6000000000084 /* Security.framework */,
+				A1B2C3D4E5F6000000000085 /* EventKit.framework */,
 				A1B2C3D4E5F60000000001F6 /* JarvisApp.app */,
 			);
 			sourceTree = "<group>";
@@ -183,7 +188,7 @@
 			);
 			mainGroup = A1B2C3D4E5F6000000000002;
 			productRefGroup = A1B2C3D4E5F6000000000002;
-			projectDirPath = "";
+			projectDirPath = "..";
 			projectRoot = "";
 			targets = (
 				A1B2C3D4E5F6000000000003 /* JarvisApp */,
@@ -207,35 +212,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B2C3D4E5F60000000003E8 /* AIProvider.swift in Sources */,
-				A1B2C3D4E5F60000000003E9 /* GeminiProvider.swift in Sources */,
-				A1B2C3D4E5F60000000003EA /* GroqProvider.swift in Sources */,
-				A1B2C3D4E5F60000000003EB /* ProviderCatalog.swift in Sources */,
-				A1B2C3D4E5F60000000003EC /* KeychainStore.swift in Sources */,
-				A1B2C3D4E5F60000000003ED /* MemoryStore.swift in Sources */,
-				A1B2C3D4E5F60000000003EE /* ConversationContext.swift in Sources */,
-				A1B2C3D4E5F60000000003EF /* SpeechEngine.swift in Sources */,
-				A1B2C3D4E5F60000000003F0 /* VisemeEngine.swift in Sources */,
-				A1B2C3D4E5F60000000003F1 /* AgentOrchestrator.swift in Sources */,
-				A1B2C3D4E5F60000000003F2 /* ToolRegistry.swift in Sources */,
-				A1B2C3D4E5F60000000003F3 /* ReminderManager.swift in Sources */,
-				A1B2C3D4E5F60000000003F4 /* JarvisApp.swift in Sources */,
-				A1B2C3D4E5F60000000003F5 /* AppEnvironment.swift in Sources */,
-				A1B2C3D4E5F60000000003F6 /* RootView.swift in Sources */,
-				A1B2C3D4E5F60000000003F7 /* MainShell.swift in Sources */,
-				A1B2C3D4E5F60000000003F8 /* JarvisTheme.swift in Sources */,
-				A1B2C3D4E5F60000000003F9 /* JarvisFace.swift in Sources */,
-				A1B2C3D4E5F60000000003FA /* WaveformView.swift in Sources */,
-				A1B2C3D4E5F60000000003FB /* JarvisComponents.swift in Sources */,
-				A1B2C3D4E5F60000000003FC /* AssistantHomeView.swift in Sources */,
-				A1B2C3D4E5F60000000003FD /* OnboardingView.swift in Sources */,
-				A1B2C3D4E5F60000000003FE /* MemoryCenterView.swift in Sources */,
-				A1B2C3D4E5F60000000003FF /* TasksView.swift in Sources */,
-				A1B2C3D4E5F6000000000400 /* IntegrationsView.swift in Sources */,
-				A1B2C3D4E5F6000000000401 /* SettingsView.swift in Sources */,
-				A1B2C3D4E5F6000000000402 /* ProviderSettingsView.swift in Sources */,
-				A1B2C3D4E5F6000000000403 /* ConversationHistoryView.swift in Sources */,
-				A1B2C3D4E5F6000000000404 /* DiagnosticsView.swift in Sources */
+				A1B2C3D4E5F600000000044C /* AIProvider.swift in Sources */,
+				A1B2C3D4E5F600000000044D /* GeminiProvider.swift in Sources */,
+				A1B2C3D4E5F600000000044E /* GroqProvider.swift in Sources */,
+				A1B2C3D4E5F600000000044F /* ProviderCatalog.swift in Sources */,
+				A1B2C3D4E5F6000000000450 /* KeychainStore.swift in Sources */,
+				A1B2C3D4E5F6000000000451 /* MemoryStore.swift in Sources */,
+				A1B2C3D4E5F6000000000452 /* ConversationContext.swift in Sources */,
+				A1B2C3D4E5F6000000000453 /* SpeechEngine.swift in Sources */,
+				A1B2C3D4E5F6000000000454 /* VisemeEngine.swift in Sources */,
+				A1B2C3D4E5F6000000000455 /* AgentOrchestrator.swift in Sources */,
+				A1B2C3D4E5F6000000000456 /* ToolRegistry.swift in Sources */,
+				A1B2C3D4E5F6000000000457 /* ReminderManager.swift in Sources */,
+				A1B2C3D4E5F6000000000458 /* JarvisApp.swift in Sources */,
+				A1B2C3D4E5F6000000000459 /* AppEnvironment.swift in Sources */,
+				A1B2C3D4E5F600000000045A /* RootView.swift in Sources */,
+				A1B2C3D4E5F600000000045B /* MainShell.swift in Sources */,
+				A1B2C3D4E5F600000000045C /* JarvisTheme.swift in Sources */,
+				A1B2C3D4E5F600000000045D /* JarvisFace.swift in Sources */,
+				A1B2C3D4E5F600000000045E /* WaveformView.swift in Sources */,
+				A1B2C3D4E5F600000000045F /* JarvisComponents.swift in Sources */,
+				A1B2C3D4E5F6000000000460 /* AssistantHomeView.swift in Sources */,
+				A1B2C3D4E5F6000000000461 /* OnboardingView.swift in Sources */,
+				A1B2C3D4E5F6000000000462 /* MemoryCenterView.swift in Sources */,
+				A1B2C3D4E5F6000000000463 /* TasksView.swift in Sources */,
+				A1B2C3D4E5F6000000000464 /* IntegrationsView.swift in Sources */,
+				A1B2C3D4E5F6000000000465 /* SettingsView.swift in Sources */,
+				A1B2C3D4E5F6000000000466 /* ProviderSettingsView.swift in Sources */,
+				A1B2C3D4E5F6000000000467 /* ConversationHistoryView.swift in Sources */,
+				A1B2C3D4E5F6000000000468 /* DiagnosticsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

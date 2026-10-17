@@ -2,11 +2,9 @@ import os
 import sys
 
 def generate_pbxproj(output_path):
-    # UUIDs: deterministic 24-char hex
     def u(val):
         return f"A1B2C3D4E5F6{val:012X}"
 
-    # List of files
     core_files = [
         ("AIProvider.swift", "JarvisCore/Sources/JarvisCore/Providers/AIProvider.swift"),
         ("GeminiProvider.swift", "JarvisCore/Sources/JarvisCore/Providers/GeminiProvider.swift"),
@@ -47,23 +45,29 @@ def generate_pbxproj(output_path):
     idx = 100
     file_refs = []
     build_files = []
+    swift_build_ids = []
+    all_file_ids = []
 
     for name, path in all_swift:
         f_id = u(idx)
         b_id = u(idx + 1000)
         idx += 1
-        file_refs.append(f'\t\t{f_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = "<group>"; }};')
+        all_file_ids.append(f'\t\t\t\t{f_id} /* {name} */')
+        swift_build_ids.append(f'\t\t\t\t{b_id} /* {name} in Sources */')
+        file_refs.append(f'\t\t{f_id} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "{path}"; sourceTree = SOURCE_ROOT; }};')
         build_files.append(f'\t\t{b_id} /* {name} in Sources */ = {{isa = PBXBuildFile; fileRef = {f_id} /* {name} */; }};')
 
     # Assets
     asset_fid = u(500)
     asset_bid = u(1500)
-    file_refs.append(f'\t\t{asset_fid} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = "<group>"; }};')
+    all_file_ids.append(f'\t\t\t\t{asset_fid} /* Assets.xcassets */')
+    file_refs.append(f'\t\t{asset_fid} /* Assets.xcassets */ = {{isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "JarvisApp/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; }};')
     build_files.append(f'\t\t{asset_bid} /* Assets.xcassets in Resources */ = {{isa = PBXBuildFile; fileRef = {asset_fid} /* Assets.xcassets */; }};')
 
     # Info.plist
     plist_fid = u(501)
-    file_refs.append(f'\t\t{plist_fid} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = "<group>"; }};')
+    all_file_ids.append(f'\t\t\t\t{plist_fid} /* Info.plist */')
+    file_refs.append(f'\t\t{plist_fid} /* Info.plist */ = {{isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JarvisApp/Info.plist"; sourceTree = SOURCE_ROOT; }};')
 
     # Frameworks & Products
     product_fid = u(502)
@@ -72,27 +76,20 @@ def generate_pbxproj(output_path):
     # Framework references
     frameworks = ["AVFoundation", "Speech", "UserNotifications", "Security", "EventKit"]
     framework_build_files = []
+    fw_build_ids = []
     for fw in frameworks:
         fw_fid = u(idx)
         fw_bid = u(idx + 1000)
         idx += 1
+        all_file_ids.append(f'\t\t\t\t{fw_fid} /* {fw}.framework */')
+        fw_build_ids.append(f'\t\t\t\t{fw_bid} /* {fw}.framework in Frameworks */')
         file_refs.append(f'\t\t{fw_fid} /* {fw}.framework */ = {{isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = {fw}.framework; path = System/Library/Frameworks/{fw}.framework; sourceTree = SDKROOT; }};')
         framework_build_files.append(f'\t\t{fw_bid} /* {fw}.framework in Frameworks */ = {{isa = PBXBuildFile; fileRef = {fw_fid} /* {fw}.framework */; }};')
 
-    # Compile Sources Section
-    sources_section = ",\n".join([f'\t\t\t\t{u(i + 1000)} /* {all_swift[i][0]} in Sources */' for i in range(len(all_swift))])
-
-    # Resources Section
-    resources_section = f'\t\t\t\t{asset_bid} /* Assets.xcassets in Resources */,'
-
-    # Frameworks Section
-    fw_section = ",\n".join([f'\t\t\t\t{u(idx - len(frameworks) + i + 1000)} /* {frameworks[i]}.framework in Frameworks */' for i in range(len(frameworks))])
-
-    # All file ref IDs in main group
-    group_children = ",\n".join([f'\t\t\t\t{u(100 + i)} /* {all_swift[i][0]} */' for i in range(len(all_swift))] + [
-        f'\t\t\t\t{asset_fid} /* Assets.xcassets */',
-        f'\t\t\t\t{plist_fid} /* Info.plist */',
-    ])
+    sources_section = ",\n".join(swift_build_ids)
+    resources_section = f'\t\t\t\t{asset_bid} /* Assets.xcassets in Resources */'
+    fw_section = ",\n".join(fw_build_ids)
+    group_children = ",\n".join(all_file_ids)
 
     pbxproj_content = f"""// !$*UTF8*$!
 {{
@@ -176,7 +173,7 @@ def generate_pbxproj(output_path):
 			);
 			mainGroup = {u(2)};
 			productRefGroup = {u(2)};
-			projectDirPath = "";
+			projectDirPath = "..";
 			projectRoot = "";
 			targets = (
 				{u(3)} /* JarvisApp */,
@@ -189,7 +186,7 @@ def generate_pbxproj(output_path):
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-{resources_section}
+{resources_section},
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		}};
@@ -200,7 +197,7 @@ def generate_pbxproj(output_path):
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-{sources_section}
+{sources_section},
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		}};
