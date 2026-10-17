@@ -126,7 +126,6 @@ def generate_pbxproj(output_path):
 {group_children},
 				{product_fid} /* JarvisApp.app */,
 			);
-			path = "..";
 			sourceTree = "<group>";
 		}};
 /* End PBXGroup section */

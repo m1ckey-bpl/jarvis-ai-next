@@ -141,7 +141,6 @@
 				A1B2C3D4E5F6000000000085 /* EventKit.framework */,
 				A1B2C3D4E5F60000000001F6 /* JarvisApp.app */,
 			);
-			path = "..";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
