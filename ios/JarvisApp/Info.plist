@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>JARVIS</string>
+	<key>CFBundleIdentifier</key>
+	<string>ai.jarvis.next</string>
+	<key>CFBundleName</key>
+	<string>JarvisApp</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>JARVIS needs microphone access to listen and converse with you in real-time.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>JARVIS uses on-device speech recognition to transcribe your voice commands.</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>JARVIS integrates with Apple Calendar to review and schedule your appointments.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>JARVIS integrates with Apple Reminders to organize your tasks.</string>
+</dict>
+</plist>

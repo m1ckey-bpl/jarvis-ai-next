@@ -1,0 +1,100 @@
+name: iOS Build & Package
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-ipa:
+    name: Build & Package Unsigned IPA
+    runs-on: macos-14
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow for icon generation
+        run: pip install pillow
+
+      - name: Select Xcode 15.4
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app/Contents/Developer
+
+      - name: Show Xcode & SDK version
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Generate App Icon
+        run: python3 scripts/generate_app_icon.py
+
+      - name: Generate Xcode Project
+        run: python3 scripts/generate_xcode_project.py
+
+      - name: Compile JarvisApp (Unsigned)
+        run: |
+          mkdir -p build
+          xcodebuild \
+            -project ios/JarvisApp.xcodeproj \
+            -scheme JarvisApp \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            PROVISIONING_PROFILE="" \
+            MARKETING_VERSION=1.0.0 \
+            CURRENT_PROJECT_VERSION=${{ github.run_number }} \
+            BUILD_DIR="$(pwd)/build" \
+            build
+
+      - name: Package Unsigned IPA
+        run: bash scripts/build_unsigned_ipa.sh "$(pwd)/build"
+
+      - name: Verify IPA Archive Structure
+        run: bash scripts/verify_unsigned_ipa.sh dist/JarvisApp-1.0.0-unsigned.ipa
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JarvisApp-1.0.0-unsigned-ipa
+          path: dist/*.ipa*
+          retention-days: 30
+
+      - name: Create Release and Upload Asset
+        if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "JARVIS iOS v1.0.0 (Unsigned IPA)"
+          body: |
+            ## Project JARVIS — Autonomous AI Personal Assistant for iPhone
+            
+            **Release v1.0.0**
+            - Native SwiftUI architecture (iOS 17.0+)
+            - Animated JARVIS face avatar with speech-synchronized lip movement
+            - Real-time conversational voice engine (SFSpeechRecognizer + AVSpeechSynthesizer)
+            - Gemini API & Groq free-tier provider support
+            - Persistent memory store (facts, preferences, decisions)
+            - UNUserNotificationCenter reminders & tasks engine
+            - Liquid Glass spatial user interface
+            
+            ### Sideloading Instructions
+            1. Download `JarvisApp-1.0.0-unsigned.ipa` below.
+            2. Sign with your Apple ID using **AltStore**, **Sideloadly**, or your personal signing tool.
+            3. Open the app on your iPhone, navigate to **Settings → AI Provider**, and paste your free Gemini or Groq API key.
+          files: |
+            dist/*.ipa
+            dist/*.sha256
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

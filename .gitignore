@@ -1,0 +1,83 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.hmap
+*.ipa
+!scripts/
+*.dSYM.zip
+*.dSYM
+.build/
+build/
+dist/
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+Package.resolved
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.p8
+*.mobileprovision
+*.certSigningRequest
+AuthKey_*.p8
+*_secret.*
+*.secret
+*.credentials
+*.token
+
+# Data stores
+backend/data/
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+*.orig
+
+# Node
+node_modules/
+
+# Logs
+*.log
+logs/
