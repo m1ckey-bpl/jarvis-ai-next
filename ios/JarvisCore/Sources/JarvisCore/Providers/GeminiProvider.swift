@@ -89,11 +89,12 @@ public final class GeminiProvider: AIProvider, @unchecked Sendable {
         req.httpMethod = "POST"
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = body
+        let request = req
 
         return AsyncThrowingStream { continuation in
             Task {
                 do {
-                    let (bytes, response) = try await self.session.bytes(for: req)
+                    let (bytes, response) = try await self.session.bytes(for: request)
                     try self.mapHTTPStatus(response: response, data: nil)
                     for try await line in bytes.lines {
                         guard line.hasPrefix("data: ") else { continue }
